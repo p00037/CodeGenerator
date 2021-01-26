@@ -1,0 +1,192 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Behavior="clr-namespace:CodeGenerator.Behavior"
+    xmlns:local="clr-namespace:CodeGenerator.Style">
+
+    <Style x:Key="grid-defalut" TargetType="Grid">
+        <Setter Property="Background" Value="#FFEEF4FB" />
+    </Style>
+
+    <Style x:Key="stackpanel-defalut" TargetType="StackPanel">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+
+    <Style x:Key="stackpanel-title" TargetType="StackPanel">
+        <Setter Property="Height" Value="60" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <Style x:Key="stackpanel-baseoperation" TargetType="StackPanel">
+        <Setter Property="Height" Value="60" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+
+    <Style x:Key="stackpanel-body" TargetType="StackPanel">
+        <Setter Property="Height" Value="590" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+
+    <Style x:Key="btn-baseoperation" TargetType="Button">
+        <Setter Property="Width" Value="75" />
+        <Setter Property="Height" Value="42" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style
+        x:Key="btn-new"
+        BasedOn="{StaticResource btn-baseoperation}"
+        TargetType="Button">
+        <Setter Property="Background" Value="#FF9ABFFF" />
+        <Setter Property="Command" Value="{Binding BtnNewCommand}" />
+        <Setter Property="Content" Value="新規" />
+    </Style>
+
+    <Style
+        x:Key="btn-delete"
+        BasedOn="{StaticResource btn-baseoperation}"
+        TargetType="Button">
+        <Setter Property="Background" Value="#FFFB7C7C" />
+        <Setter Property="Command" Value="{Binding BtnDeleteCommand}" />
+        <Setter Property="Content" Value="削除" />
+        <Setter Property="IsEnabled" Value="{Binding IsBtnDeleteEnabled.Value}" />
+    </Style>
+
+    <Style
+        x:Key="btn-registration"
+        BasedOn="{StaticResource btn-baseoperation}"
+        TargetType="Button">
+        <Setter Property="Background" Value="#FFFF7535" />
+        <Setter Property="Command" Value="{Binding BtnRegistrationCommand}" />
+        <Setter Property="Content" Value="登録" />
+    </Style>
+
+    <Style
+        x:Key="btn-return"
+        BasedOn="{StaticResource btn-baseoperation}"
+        TargetType="Button">
+        <Setter Property="Margin" Value="5,0,10,0" />
+        <Setter Property="Command" Value="{Binding BtnReturnCommand}" />
+        <Setter Property="Content" Value="戻る" />
+    </Style>
+
+    <Style x:Key="control-default" TargetType="Control">
+        <Setter Property="Height" Value="25" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style
+        x:Key="input-default"
+        BasedOn="{StaticResource control-default}"
+        TargetType="Control">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="FontFamily" Value="MS Gothic" />
+    </Style>
+
+    <Style
+        x:Key="textbox-default"
+        BasedOn="{StaticResource input-default}"
+        TargetType="TextBox">
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style
+        x:Key="textbox-number"
+        BasedOn="{StaticResource input-default}"
+        TargetType="TextBox">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="Behavior:TextBoxBehaviors.IsNumeric" Value="True" />
+    </Style>
+
+    <Style x:Key="textbox-errormessage" TargetType="TextBox">
+        <Setter Property="Height" Value="36" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="{Binding ErrorMessageBackColor.Value}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Text" Value="{Binding ErrorMessage.Value}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
+    <Style
+        x:Key="label-default"
+        BasedOn="{StaticResource control-default}"
+        TargetType="Label">
+        <Setter Property="Width" Value="120" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
+    </Style>
+
+    <Style x:Key="label-title" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}" />
+    </Style>
+
+    <Style
+        x:Key="button-default"
+        BasedOn="{StaticResource control-default}"
+        TargetType="Button" />
+
+    <Style
+        x:Key="button-search"
+        BasedOn="{StaticResource button-default}"
+        TargetType="Button">
+        <Setter Property="Width" Value="86" />
+        <Setter Property="Command" Value="{Binding BtnSearchCommand}" />
+        <Setter Property="Content" Value="検索" />
+    </Style>
+
+    <Style
+        x:Key="combobox-default"
+        BasedOn="{StaticResource input-default}"
+        TargetType="ComboBox">
+        <Setter Property="Width" Value="144" />
+    </Style>
+
+    <Style
+        x:Key="datepicker-default"
+        BasedOn="{StaticResource input-default}"
+        TargetType="DatePicker">
+        <Setter Property="Width" Value="100" />
+    </Style>
+
+    <Style
+        x:Key="checkbox-default"
+        BasedOn="{StaticResource input-default}"
+        TargetType="CheckBox" />
+
+    <Style x:Key="border-errormessage" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Red" />
+        <Setter Property="BorderThickness" Value="{Binding ErrorMessageBorderThickness.Value}" />
+    </Style>
+
+    <Style x:Key="grid-search" TargetType="DataGrid">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="ItemsSource" Value="{Binding SearchResultEntitys.Value, Mode=OneWay}" />
+        <Setter Property="SelectedItem" Value="{Binding SelectedItem.Value}" />
+    </Style>
+</ResourceDictionary>

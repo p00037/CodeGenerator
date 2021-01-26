@@ -1,0 +1,171 @@
+﻿<Window
+    x:Class="CodeGenerator.Views.AutoCodeGenerator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:CodeGenerator.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AutoCodeGenerator"
+    Width="1200"
+    Height="680"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary Source="/Style/StyleDic.xaml" />
+    </Window.Resources>
+    <Grid>
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem Header="設定">
+                <StackPanel>
+                    <StackPanel Style="{StaticResource stackpanel-defalut}">
+                        <Label Content="ファイル名" Style="{StaticResource label-default}" />
+
+                        <TextBox
+                            Width="500"
+                            MaxLength="20"
+                            Style="{StaticResource textbox-default}"
+                            Text="{Binding FilePath.Value}" />
+
+                        <Button
+                            Width="79"
+                            Margin="5,0,0,0"
+                            Command="{Binding BtnViewFileDaialogCommand}"
+                            Content="選択"
+                            Style="{StaticResource button-default}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource stackpanel-defalut}">
+                        <Label Content="プログラムフォルダ" Style="{StaticResource label-default}" />
+
+                        <TextBox
+                            Width="500"
+                            MaxLength="20"
+                            Style="{StaticResource textbox-default}"
+                            Text="{Binding ProgramFolderPath.Value}" />
+
+                        <Button
+                            Width="79"
+                            Margin="5,0,0,0"
+                            Command="{Binding BtnViewProgramFolderDaialogCommand}"
+                            Content="選択"
+                            Style="{StaticResource button-default}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource stackpanel-defalut}">
+                        <Button
+                            Width="79"
+                            Margin="15,0,0,0"
+                            Command="{Binding BtnExecCommand}"
+                            Content="実行"
+                            Style="{StaticResource button-default}" />
+                    </StackPanel>
+
+                    <StackPanel Style="{StaticResource stackpanel-defalut}">
+                        <TextBox Name="TextBox1" Style="{StaticResource textbox-default}" />
+                    </StackPanel>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="Entity">
+                <Grid>
+                    <TextBox
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding EntityCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="DetailEntity">
+                <Grid>
+                    <TextBox
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding DetailEntityCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="SearchEntity">
+                <Grid>
+                    <TextBox
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding SearchEntityCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Dao">
+                <Grid>
+                    <TextBox
+                        Grid.ColumnSpan="2"
+                        Margin="0,0,0,-0.4"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding DaoCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="DetailDao">
+                <Grid>
+                    <TextBox
+                        Grid.ColumnSpan="2"
+                        Margin="0,0,0,-0.4"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding DetailDaoCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="ViewModel">
+                <Grid>
+                    <TextBox
+                        Grid.ColumnSpan="2"
+                        Margin="0,0,0,-0.4"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding ViewModelCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Xaml">
+                <Grid>
+                    <TextBox
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding XamlCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Xamlcs">
+                <Grid>
+                    <TextBox
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding XamlcsCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="AppDbContext">
+                <Grid>
+                    <TextBox
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Text="{Binding AppDbContextCode.Value}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

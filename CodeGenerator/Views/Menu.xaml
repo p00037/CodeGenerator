@@ -1,0 +1,40 @@
+﻿<Window
+    x:Class="CodeGenerator.Views.Menu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CodeGenerator.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Menu"
+    Width="1200"
+    Height="680"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Background="#FFEEF4FB">
+        <StackPanel Margin="20">
+            <Button
+                Width="371"
+                Height="54"
+                Margin="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="AutoCodeGenerator_Click"
+                Content="WPF"
+                FontSize="24"
+                FontWeight="Bold" />
+        </StackPanel>
+
+        <StackPanel Margin="20">
+            <Button
+                Width="371"
+                Height="54"
+                Margin="20,100,0,60"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="WpfFody_Click"
+                Content="WPF(Fody)"
+                FontSize="24"
+                FontWeight="Bold" />
+        </StackPanel>
+    </Grid>
+</Window>
